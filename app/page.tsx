@@ -134,7 +134,7 @@ export default function Home() {
             onClick={() => setShowMessage(true)}
             className="bg-gradient-to-r from-pink-500 to-rose-500 px-14 py-6 rounded-full text-3xl font-black hover:scale-110 transition duration-300 shadow-[0_0_50px_rgba(255,0,120,0.5)]"
           >
-            Same7tiny 🌹
+            ha'k 3alyaa w 3aiz arg3  hamoudy habibk 🌹
           </button>
         </div>
 
