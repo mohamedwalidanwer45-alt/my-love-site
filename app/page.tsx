@@ -21,8 +21,41 @@ const messages = [
 ];
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
   const [current, setCurrent] = useState(0);
   const [showMessage, setShowMessage] = useState(false);
+  const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    const startDate = new Date("2024-01-01");
+  const today = new Date();
+  const diffTime = Math.abs(today.getTime() - startDate.getTime());
+  const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center text-white overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-900 via-black to-rose-900"></div>
+
+        <div className="text-center z-10 animate-pulse">
+          <h1 className="text-7xl font-black text-pink-400 mb-6">
+            To The Love Of My Life ❤️
+          </h1>
+
+          <p className="text-3xl text-pink-200">
+            Loading Our Memories...
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,6 +67,22 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black overflow-hidden relative text-white">
+
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-pink-400 animate-bounce opacity-70"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 25 + 15}px`,
+            }}
+          >
+            ❤️
+          </div>
+        ))}
+      </div>
       <div className="absolute inset-0 bg-gradient-to-br from-pink-900 via-black to-rose-950"></div>
 
       <div className="absolute inset-0 overflow-hidden">
@@ -53,6 +102,11 @@ export default function Home() {
           </div>
         </div>
         <div className="text-center mb-16 animate-pulse">
+          <div className="bg-white/10 border border-white/20 rounded-full px-8 py-4 inline-block backdrop-blur-xl mb-8 shadow-2xl">
+            <p className="text-2xl font-bold text-pink-200">
+              ⏳ Been Together For {days} Days ❤️
+            </p>
+          </div>
           <h1 className="text-6xl md:text-8xl font-black text-pink-400 mb-6">
             Ana Assef ❤️
           </h1>
@@ -131,10 +185,19 @@ export default function Home() {
 
         <div className="flex justify-center mb-20">
           <button
+            onMouseEnter={() => {
+              setButtonPosition({
+                x: Math.random() * 200 - 100,
+                y: Math.random() * 100 - 50,
+              });
+            }}
             onClick={() => setShowMessage(true)}
+            style={{
+              transform: `translate(${buttonPosition.x}px, ${buttonPosition.y}px)`,
+            }}
             className="bg-gradient-to-r from-pink-500 to-rose-500 px-14 py-6 rounded-full text-3xl font-black hover:scale-110 transition duration-300 shadow-[0_0_50px_rgba(255,0,120,0.5)]"
           >
-            ha'k 3alyaa w 3aiz arg3  hamoudy habibk 🌹
+            Same7tiny 🌹
           </button>
         </div>
 
