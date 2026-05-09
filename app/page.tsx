@@ -16,6 +16,8 @@ const messages = [
   "Mesh 3ayez akhsarek 🌍",
   "Kol dahka menek betfar2 ma3aya ✨",
   "Wa3d مني afdal janbek دايمًا 💌",
+  "Ana bgd ba7ebek 🥺",
+  "Kol sora lena bt7kely 7ekaya ❤️",
 ];
 
 export default function Home() {
@@ -40,6 +42,16 @@ export default function Home() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
+
+        <div className="flex justify-center gap-4 flex-wrap mb-10">
+          <div className="bg-white/10 border border-white/20 px-6 py-4 rounded-full backdrop-blur-xl text-pink-200 font-bold shadow-xl animate-pulse">
+            ❤️ Together Forever ❤️
+          </div>
+
+          <div className="bg-white/10 border border-white/20 px-6 py-4 rounded-full backdrop-blur-xl text-pink-200 font-bold shadow-xl">
+            🌹 You Mean The World To Me 🌹
+          </div>
+        </div>
         <div className="text-center mb-16 animate-pulse">
           <h1 className="text-6xl md:text-8xl font-black text-pink-400 mb-6">
             Ana Assef ❤️
@@ -122,8 +134,44 @@ export default function Home() {
             onClick={() => setShowMessage(true)}
             className="bg-gradient-to-r from-pink-500 to-rose-500 px-14 py-6 rounded-full text-3xl font-black hover:scale-110 transition duration-300 shadow-[0_0_50px_rgba(255,0,120,0.5)]"
           >
-            ha'k 3alyaa ana asaf🌹
+            Same7tiny 🌹
           </button>
+        </div>
+
+        <div className="bg-white/10 border border-white/20 rounded-[40px] p-10 backdrop-blur-xl mb-20 shadow-2xl">
+          <h2 className="text-4xl font-black text-center text-pink-300 mb-8">
+            Why I Love You ❤️
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              "Dahktk 😍",
+              "7eneytk 🥺",
+              "Ehtmamk ❤️",
+              "Tafaseelk ✨",
+              "Ro7ek 🌍",
+              "Kol 7aga feeky 💌",
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-pink-500/10 border border-pink-300/20 rounded-3xl p-6 text-center hover:scale-105 transition duration-300"
+              >
+                <p className="text-2xl font-bold text-pink-200">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-black text-pink-300 mb-6 animate-pulse">
+            Our Memories ✨
+          </h2>
+
+          <p className="text-xl text-gray-300 leading-10 max-w-3xl mx-auto">
+            Kol lahza bena leha ma3na...
+            <br />
+            W kol sora fe el website ده fakrany eny ma3aky كنت أسعد واحد ❤️
+          </p>
         </div>
 
         {showMessage && (
